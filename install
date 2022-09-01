@@ -1,6 +1,16 @@
 #!/usr/bin/bash
-intro()
-function intro() {
-  echo Done. Press intro
-  read intro
-}
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+sudo pacman -S ttf-fira-code wqy-zenhei st
+echo Done. Press intro
+read intro
+yay -S ttf-symbola nerd-fonts-complete st
+git clone https://git.suckless.org/dwm
+cd dwm
+sudo make clean install
+echo Done. Press intro
+read intro
+echo exec dwm >> ~/.xinitrc
+reboot
+
